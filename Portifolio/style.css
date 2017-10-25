@@ -13,10 +13,11 @@ body{
 	display: -webkit-flex;
 	display: flex;
 	width: 100%;
+	height: 50px;
 }
 
 /*
-	Setting the menu bar!
+	Setting the menu bar! Turning it responsive and fixed in the top.
 */
 
 .menu{
@@ -33,8 +34,9 @@ body{
 .logo{
 	width: 20%;
 	height: 100%;
-	min-width: 100px;
 	float: left;
+	min-width: 100px;
+
 }
 
 .btnMenu{
@@ -47,18 +49,17 @@ body{
 
 .logo img{
 	padding: 3px 0 2px 30% ;
-	widows: 100%;
+	width: auto;
 	height: auto;
 }
 
 ul{
-	margin: 0 0 0 30%;
+	margin: 0 15px 0 0;
 }
 
 .menu ul li{
 	text-decoration: none;
 	display: block;
-	float: left;
 	list-style: none;
 }
 
@@ -67,6 +68,7 @@ ul{
 	padding: 14px 16px;
 	font-size: 17px;
 	overflow: hidden;
+	float: right;
 }
 
 .menu a{
@@ -77,4 +79,56 @@ ul{
 .menu a:hover{
 	color: #fd5f54;
 	cursor: pointer;
+}
+
+/*
+	footer
+
+*/
+
+.contact{
+	padding-top: 100px;
+	background-color: blue;
+}
+
+
+
+.footer{
+	display: block;
+	width: 100%;
+	min-width: 620px;
+	padding-top: 80px;
+}
+.form{
+	border: 1px solid blue;
+	width: 40%;
+	float: left;
+	min-width: 248px;
+	padding: 10px;
+}
+
+.social{
+	border: 1px solid red;
+	width: 60%;
+	float: left;
+	min-width: 372px;
+	padding: 10px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 400px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover{
+	opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: transparent;
+  color: #848484;
 }
