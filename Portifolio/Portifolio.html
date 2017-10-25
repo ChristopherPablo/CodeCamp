@@ -1,77 +1,26 @@
-<!HTML doctype>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Cristofher Portifolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
+<head>
+	<title>Cristofher's portifolio.</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 
- <!--
-	Menu bar at the too, made it fixed.
--->
+	<div class="container menu">
 
-    <div class="menu">
-      <div class="topLogo topNav"><a href="#">Logo</a></div>
-      <div class="topNav" id="myTopnav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#project">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+		<div class="logo">
+			<a href="https://placeholder.com"><img src="http://via.placeholder.com/40x40"></a>
+		</div>
+		<div class="btnMenu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+		</div>
 
-<!--
-	Bottom at the end of the page to scroll it up again.
--->
-    <bottom onclick="topFunction()" id="myBtn" title="go to top">Top</bottom>
+	</div>
 
-      <script type="text/javascript">
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-          document.getElementById("myBtn").style.display = "block";
-          } else {
-            document.getElementById("myBtn").style.display = "none";
-             }
-          }
-
-         function topFunction(){
-           document.body.scrollTop = 0;
-           document.documentElement.scrollTop = 0;
-         }
-    </script>
-
-    <div class="container">
-
-      <div class="content" id="about">
-        <div class="image colum">
-          <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x350"></a>
-        </div>
-
-        <div class="text colum">
-          <p>With HTML, anchor linking works, but the transition is pretty harsh. There’s no animation at all, the page just jumps right to the anchor upon clicking. What if we want to make this a more gradual effect so the user can plainly see that the page is scrolling down?
-
-		  You could perform the entire linking and scrolling operation in JavaScript, but I think that’s a bad idea simply because you’re unnecessarily limiting the number of people that can use your site to those with JavaScript turned on. Instead, it’s much better to set the linking up in HTML exactly like we’ve done here and then add the animation effect for JavaScript users. The site will still work for anyone with JS turned off, they just won’t see the animation.
-          You could perform the entire linking and scrolling operation in JavaScript, but I think that’s a bad idea simply because you’re unnecessarily limiting the number of people that can use your site to those with JavaScript turned on. Instead, it’s much better to set the linking up in HTML exactly like we’ve done here and then add the animation effect for JavaScript users. The site will still work for anyone with JS turned off, they just won’t see the animation.
-          You could perform the entire linking and scrolling operation in JavaScript, but I think that’s a bad idea simply because you’re unnecessarily limiting the number of people that can use your site to those with JavaScript turned on. Instead, it’s much better to set the linking up in HTML exactly like we’ve done here and then add the animation effect for JavaScript users. The site will still work for anyone with JS turned off, they just won’t see the animation.</p>
-        </div>
-
-      </div>
-      <div class="content" id="project">
-
-        <p>With HTML, anchor linking works, but the transition is pretty harsh. There’s no animation at all, the page just jumps right to the anchor upon clicking. What if we want to make this a more gradual effect so the user can plainly see that the page is scrolling down?
-
-		You could perform the entire linking and scrolling operation in JavaScript, but I think that’s a bad idea simply because you’re unnecessarily limiting the number of people that can use your site to those with JavaScript turned on. Instead, it’s much better to set the linking up in HTML exactly like we’ve done here and then add the animation effect for JavaScript users. The site will still work for anyone with JS turned off, they just won’t see the animation.</p>
-      </div>
-
-      <div class="content" id="contact">
-        <p>With HTML, anchor linking works, but the transition is pretty harsh. There’s no animation at all, the page just jumps right to the anchor upon clicking. What if we want to make this a more gradual effect so the user can plainly see that the page is scrolling down?
-
-		You could perform the entire linking and scrolling operation in JavaScript, but I think that’s a bad idea simply because you’re unnecessarily limiting the number of people that can use your site to those with JavaScript turned on. Instead, it’s much better to set the linking up in HTML exactly like we’ve done here and then add the animation effect for JavaScript users. The site will still work for anyone with JS turned off, they just won’t see the animation.</p>
-
-      </div>
-
-    </div>
-  </body>
+</body>
 </html>
