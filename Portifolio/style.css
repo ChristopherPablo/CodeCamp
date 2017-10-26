@@ -14,6 +14,13 @@ body{
 	display: flex;
 	width: 100%;
 }
+.row{
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 62.5em;
+}
 
 ul, li{
 	text-decoration: none;
@@ -93,11 +100,11 @@ ul{
 }
 
 /*
-	footer
+	footer, setting the social menu, plus a form and responsive configuration
 
 */
 
-.footer{
+.contact{
 	display: block;
 	width: 100%;
 	height: 500px;
@@ -105,13 +112,6 @@ ul{
 	padding-top: 50px;
 	padding-bottom: 40px;
 	background-color: #494949;
-}
-.row{
-	width: 100%;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 62.5em;
 }
 .form{
 	width: 50%;
@@ -136,15 +136,10 @@ ul{
 	margin: 10px;
 }
 
-.fa-codepen:hover{
+.fa-codepen:hover, .fa-github:hover, .fa-linkedin:hover{
 	color: white;
 }
-.fa-github:hover{
-	color: black;
-}
-.fa-linkedin:hover{
-	color: #0077B5;
-}
+
 .social ul{
     margin: 0;
     padding: 0 17px 0 0;
@@ -198,4 +193,21 @@ input[type=submit]:hover{
 .form h3{
 	color: #fff;
 	padding-left: 20px;
+}
+
+/*
+	Setting the about page.
+*/
+
+.about{
+	border: 1px solid red;
+	width: 100%;
+	height: 500px;
+	min-width: 620px;
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+
+.about .row{
+	border: 1px solid green;
 }
