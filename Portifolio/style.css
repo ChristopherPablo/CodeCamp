@@ -8,6 +8,7 @@
 
 body{
 	margin: 0;
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 .container{
 	display: -webkit-flex;
@@ -99,8 +100,86 @@ ul{
 	cursor: pointer;
 }
 
+/* header*/
+
 /*
-	footer, setting the social menu, plus a form and responsive configuration
+	Setting the about page.
+*/
+
+.about{
+	width: 100%;
+	height: 500px;
+	min-width: 620px;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	background-color: #ffffff;
+}
+
+.discription{
+	float: left;
+	width: 60%;
+	height: 100%;
+	min-width: 350px;
+}
+
+.picture{
+	float: left;
+	width: 40%;
+	height: 100%;
+	min-width: 100px;
+}
+
+.picture img{
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+	margin-top: 1%;
+}
+
+/* Media queries to centralize the about picture and adjust the padding of all components*/
+@media screen and (max-width: 1024px){
+
+	.picture img, .social p{
+		padding-right: 7px;
+	}
+
+	.discription h1, p{
+		padding-left: 7px;
+	}
+
+	.form .container{
+		margin-left: 7px;
+	}
+}
+
+@media screen and (max-width: 934px) and (min-width: 245px){
+	.picture img{
+		margin-top: 10%;
+	}
+}
+
+@media screen and (max-width: 834px){
+	.picture img{
+		margin-top: 15%;
+	}
+}
+
+@media screen and (max-width: 734px){
+	.picture img{
+		margin-top: 25%;
+	}
+}
+
+@media screen and (max-width: 634px){
+	.picture img{
+		margin-top: 30%;
+	}
+}
+
+/* Work*/
+
+/*
+	Contact, setting the social menu, plus a form and responsive configuration
 
 */
 
@@ -172,7 +251,7 @@ input[type=text], select, textarea{
 }
 
 input[ type=submit]{
-	background-color: #4caf50;
+	background-color: #fd5f54;
 	color: white;
 	padding: 12px 20px;
 	border: none;
@@ -181,7 +260,7 @@ input[ type=submit]{
 }
 
 input[type=submit]:hover{
-	background-color: #45a049;
+	background-color: #ca4c43;
 }
 
 .form .container{
@@ -195,19 +274,4 @@ input[type=submit]:hover{
 	padding-left: 20px;
 }
 
-/*
-	Setting the about page.
-*/
-
-.about{
-	border: 1px solid red;
-	width: 100%;
-	height: 500px;
-	min-width: 620px;
-	padding-top: 50px;
-	padding-bottom: 40px;
-}
-
-.about .row{
-	border: 1px solid green;
-}
+/* Footer*/
