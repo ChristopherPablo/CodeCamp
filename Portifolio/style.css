@@ -134,6 +134,7 @@ ul{
 	height: auto;
 	border-radius: 50%;
 	margin-top: 1%;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* Media queries to centralize the about picture and adjust the padding of all components*/
@@ -178,6 +179,96 @@ ul{
 
 /* Work*/
 
+.work{
+	border: 1px solid red;
+	display: block;
+	width: 100%;
+	height: 680px;
+	min-width: 620px;
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+
+.slider{
+	border: 1px solid yellow;
+	width: 100%;
+	height: 90%;
+	max-width: 31em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title{
+	border: 1px solid green;
+	width: 100%;
+	height: 10%;
+	max-width: 31em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slideshow-container{
+	border: 1px solid black;
+	max-width: 350px;
+	margin: auto;
+}
+
+.slideshow-container img{
+	width: 100%;
+	height: 100%;
+	margin-top: 2px;
+}
+
+.mySlide{
+	display:none;
+}
+
+.next, .prev{
+	cursor: pointer;
+	position: absolute;
+	top: 110%;
+	width: auto;
+	padding: 16px;
+	margin: -22px;
+	color: #333;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+.next{
+	right: 35%;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev{
+	left: 35%;
+}
+
+.prev:hover, .next:hover{
+	background-color: rgb(0,0,0,0.8);
+}
+
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+	from{opacity: .4}
+	to {opacity: 1}
+}
+
+.title h1{
+	text-align: center;
+	margin-top: 0;
+}
+.work .row{
+	border: 1px solid blue;
+}
 /*
 	Contact, setting the social menu, plus a form and responsive configuration
 
