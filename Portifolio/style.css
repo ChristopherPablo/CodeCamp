@@ -180,17 +180,17 @@ ul{
 /* Work*/
 
 .work{
-	border: 1px solid red;
 	display: block;
 	width: 100%;
 	height: 680px;
 	min-width: 620px;
 	padding-top: 50px;
 	padding-bottom: 40px;
+	color: #fff;
+	background-color: #ca4c43;
 }
 
 .slider{
-	border: 1px solid yellow;
 	width: 100%;
 	height: 90%;
 	max-width: 31em;
@@ -199,7 +199,6 @@ ul{
 }
 
 .title{
-	border: 1px solid green;
 	width: 100%;
 	height: 10%;
 	max-width: 31em;
@@ -208,7 +207,7 @@ ul{
 }
 
 .slideshow-container{
-	border: 1px solid black;
+	height: 100%;
 	max-width: 350px;
 	margin: auto;
 }
@@ -217,33 +216,36 @@ ul{
 	width: 100%;
 	height: 100%;
 	margin-top: 2px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.mySlide{
-	display:none;
+.mySlides{
+	display: none;
 }
 
 .next, .prev{
-	cursor: pointer;
-	position: absolute;
-	top: 110%;
-	width: auto;
+	position: relative;
+	top:-270px;
+	width: 48px;
+	height: 28px;
+	text-align: center;
 	padding: 16px;
 	margin: -22px;
-	color: #333;
 	font-weight: bold;
 	font-size: 18px;
 	transition: 0.6s ease;
+	cursor: pointer;
 	border-radius: 0 3px 3px 0;
 }
 
 .next{
-	right: 35%;
+	float: right;
 	border-radius: 3px 0 0 3px;
 }
 
 .prev{
-	left: 35%;
+	float: left;
+
 }
 
 .prev:hover, .next:hover{
@@ -266,9 +268,15 @@ ul{
 	text-align: center;
 	margin-top: 0;
 }
-.work .row{
-	border: 1px solid blue;
+
+.work .text{
+	font-size: 15px;
+	padding: 8px 12px;
+	bottom: 50%;
+	width: 100%;
+	text-align: center;
 }
+
 /*
 	Contact, setting the social menu, plus a form and responsive configuration
 
