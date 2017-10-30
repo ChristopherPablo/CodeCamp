@@ -47,6 +47,8 @@ ul{
 .menu{
 	position: fixed;
 	top: 0;
+	z-index: 2;
+	clear: both;
 	display: block;
 	width: 100%;
 	height: 50px;
@@ -100,8 +102,6 @@ ul{
 	cursor: pointer;
 }
 
-/* header*/
-
 /*
 	Setting the about page.
 */
@@ -110,7 +110,7 @@ ul{
 	width: 100%;
 	height: 500px;
 	min-width: 620px;
-	padding-top: 50px;
+	padding-top: 55px;
 	padding-bottom: 40px;
 	background-color: #ffffff;
 }
@@ -207,8 +207,11 @@ ul{
 }
 
 .slideshow-container{
-	height: 100%;
-	max-width: 350px;
+	position: relative;
+	z-index: 1;
+	height: 80%;
+	max-width: 30em;
+	margin-top: 10%;
 	margin: auto;
 }
 
@@ -225,7 +228,8 @@ ul{
 
 .next, .prev{
 	position: relative;
-	top:-270px;
+	z-index: 1;
+	top:-230px;
 	width: 48px;
 	height: 28px;
 	text-align: center;
@@ -374,3 +378,17 @@ input[type=submit]:hover{
 }
 
 /* Footer*/
+
+.footer{
+	width: 100%;
+	height: 48px;
+	background-color: #000;
+}
+
+.footer .row{
+	width: 20%;
+	max-width: 350px;
+	padding-top: 10px;
+	margin: auto;
+	color: #c8c8c8;
+}
