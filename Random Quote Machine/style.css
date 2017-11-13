@@ -53,6 +53,7 @@ body{
 
 }
 .quote .container{
+	border: solid 1px blue;
 	min-height: 15.5em;
 	min-width: 31em;
 	margin: 0px;
@@ -65,6 +66,8 @@ body{
 	border: solid 1px blue;
 	width: 60%;
 	height: 100%;
+	min-height: 227.266px;
+	min-width: 373.594px;
 	margin: auto;
 	margin-bottom: 10px;
 	margin-top: 10px;
@@ -76,21 +79,20 @@ body{
 }
 
 /*
-
 	Adding the Pokemon-like dialogue box.
 */
 .box {
-  font-size: 16px;
-  font-family: "PokemonGb", Arial, sans-serif;
-  border-radius: 2px;
-  padding: 8px;
-  width: 80%;
-  line-height: 16px;
-  margin: auto;
-  background: white;
-  border: 1px solid white;
-  box-shadow: 0 1px 0 1px black,
-              inset 0 1px 0 1px black,
-              0 0 0 1px black,
-              inset 0 0 0 1px black;
-}
+	font-size: 16px;
+	font-family: "PokemonGb", Arial, sans-serif;
+	border-radius: 2px;
+	padding: 8px;
+	width: 80%;
+	line-height: 16px;
+	margin: auto;
+	background: white;
+	border: 1px solid white;
+	box-shadow: 0 1px 0 1px black,
+	            inset 0 1px 0 1px black,
+	            0 0 0 1px black,
+	            inset 0 0 0 1px black;
+	}
