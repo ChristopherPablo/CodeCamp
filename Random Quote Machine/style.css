@@ -6,13 +6,21 @@
 	share it on tweeter or tumblr, and a nice background.
 
 */
+@font-face {
+	font-family: 'PokemonGb';
+	src: url('fonts/Pokemon_GB.eot'), /* IE9 Compat Modes */
+	     url('fonts/Pokemon_GB.woff') format('woff'), /* Modern Browsers */
+	     url('fonts/Pokemon_GB.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('fonts/Pokemon_GB.svg') format('svg'); /* Legacy iOS */
+}
+
 *{
 	box-sizing: border-box;
 }
 
 body{
 	margin: 0;
-	font-family: Georgia, Times, "Times New Roman", serif;
+	font-family: PokemonGb, Georgia, Times, "Times New Roman", serif;
 }
 
 .container{
