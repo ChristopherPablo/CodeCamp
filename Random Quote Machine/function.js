@@ -10,8 +10,11 @@ var quote = [
 
 var text = '';
 
+
+
 //function to tke the array length and using the random math property set an
 //random quote from the array to text.
 function randomQuote(){
 	text = quote[Math.floor(Math.random()*(quote.length))];
+	document.getElementById('content').innerHTML = text;
 }
