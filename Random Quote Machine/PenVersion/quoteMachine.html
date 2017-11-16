@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Quote Machine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="well quoteWell">
+          <i class="fa fa-quote-left fa-3x"></i>
+        </div>
+      <div class="box">
+        <div class="quoteContent">
+          <blockquote>
+            <p class="quote" id="content">
+              Gotta Catch 'Em All!!
+            </p>
+            <p class="authorName" id="author">
+              - Satoshi
+            </p>
+          </blockquote>
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn btn-default" onclick="randomQuote()" >
+						<i class="fa fa-refresh fa-2x"></i>
+					</button>
+
+          <button class="btn btn-default" onclick="socialTumblr()" >
+						<i class="fa fa-tumblr fa-2x"></i>
+					</button>
+
+          <button class="btn btn-default" onclick="socialTwitter()" >
+						<i class="fa fa-twitter fa-2x"></i>
+					</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

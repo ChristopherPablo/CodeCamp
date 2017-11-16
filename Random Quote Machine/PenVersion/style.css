@@ -1,0 +1,90 @@
+/*
+
+	The construction of a Random Quote Machine. Basically this machine has to generate
+	a random quote everytime the user clip the botton "New Quote", it has to have a quote box
+	that adjust the screem size of the user, an animation, to make it more fun, a botton to
+	share it on tweeter or tumblr, and a nice background.
+
+*/
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	background-color: #fff;
+}
+
+.container{
+  width:700px;
+  margin: auto;
+  display:flex;
+
+}
+
+/*
+	Adding the Pokemon-like dialogue box.
+*/
+.box {
+	font-size: 20px;
+	border-radius: 2px;
+	padding:8px;
+	width: 500px;
+	height: 250px;
+	line-height: 22px;
+	margin: auto;
+	margin-top: 25px;
+	background: white;
+	border: 1px solid white;
+	box-shadow: 0 1px 0 1px black,
+	            inset 0 1px 0 1px black,
+	            0 0 0 1px black,
+	            inset 0 0 0 1px black;
+	}
+
+.quoteContent{
+  min-height: 150px;
+}
+.quote{
+  padding: 10px;
+}
+
+.authorName{
+  text-align: right;
+  padding: 10px;
+}
+
+.quoteWell {
+	margin-top:40px;
+}
+.fa-quote-left {
+	color: #444;
+	background: #eee;
+	border: 2px solid #ccc;
+	padding: 10px 12px;
+	border-radius: 100%;
+	position: absolute;
+	top: 8px;
+	left: 32%;
+}
+
+.buttons{
+  text-align: right;
+}
+
+.fa-twitter, .fa-refresh{
+  color: #444;
+	background: #eee;
+	border: 2px solid #ccc;
+	padding: 5px 6px;
+	border-radius: 100%;
+}
+
+.fa-tumblr{
+  color: #444;
+  background: #eee;
+  border: 2px solid #ccc;
+  padding: 5px 9px;
+  border-radius: 100%;
+}
