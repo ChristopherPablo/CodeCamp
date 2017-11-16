@@ -30,7 +30,6 @@ body{
 }
 
 .container{
-	border: 1px solid red;
 	display: -webkit-flex;
 	display: flex;
 	width: 100%;
@@ -42,7 +41,6 @@ body{
 }
 
 .quote{
-	border: 1px solid green;
 	width: 100%;
 	height: 100%;
 	max-width: 620px;
@@ -56,7 +54,6 @@ body{
 
 }
 .quote .container{
-	border: solid 1px blue;
 	min-height: 15.5em;
 	min-width: 31em;
 	margin: 0px;
@@ -67,7 +64,6 @@ body{
 	Setting the images property
 */
 .professor{
-	border: solid 1px blue;
 	width: 60%;
 	height: 100%;
 	min-height: 227.266px;
@@ -94,7 +90,7 @@ body{
 	height: 180px;
 	line-height: 16px;
 	margin: auto;
-	margin-top: 28px;
+	margin-top: 25px;
 	background: white;
 	border: 1px solid white;
 	box-shadow: 0 1px 0 1px black,
@@ -102,3 +98,44 @@ body{
 	            0 0 0 1px black,
 	            inset 0 0 0 1px black;
 	}
+
+.botton ul li{
+	height: 25px;
+	border: solid 1px #aaaab3;
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+}
+
+.botton ul{
+	margin: 5px 0 0 160px;
+}
+
+.botton li{
+	float: left;
+	font-size: 10px;
+	display: list-item;
+	margin: 0;
+	border-radius: 0 0 10px 10px;
+	background-color: #aaaab3;
+}
+
+.btn{
+	color: #5e5e63;
+	height: 25px;
+	font-size: 10px;
+	font-family: PokemonGb, Georgia, Times, "Times New Roman", serif;
+	line-height: 25px;
+	padding: 0 5px 0 5px;
+	border-color: #97979f;
+	border-radius: 0 0 10px 10px;
+	background-color: transparent !important;
+}
+button:focus{
+	outline: none;
+}
+
+
+.botton li:hover{
+	background-color: #c3c3cc;
+}
