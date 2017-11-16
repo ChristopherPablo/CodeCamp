@@ -49,7 +49,7 @@ body{
 	margin-right: auto;
 	margin-left: auto;
 	background-image: url(images/3ds_xl.png);
-	 background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-size: 620px 500px;
 
 }
@@ -138,4 +138,10 @@ button:focus{
 
 .botton li:hover{
 	background-color: #c3c3cc;
+}
+
+.author{
+	display: block;
+	text-align: right;
+	clear: both;
 }
