@@ -42,6 +42,7 @@ var data =[
   }
 ];
 
+var text;
 
 //function to tke the array length and using the random math property set an
 //random quote from the array to text.
@@ -50,3 +51,17 @@ function randomQuote(){
 	document.getElementById('content').innerHTML = text.quote;
 	document.getElementById('author').innerHTML ="- " + text.author;
 }
+
+function socialTwitter(){
+	var txt = document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
+	var link = "https://twitter.com/intent/tweet?text="+txt+"&hashtags=quote";
+	window.open(link, '_blank');
+}
+
+function socialTumblr(){
+	var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
+	var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
+	window.open(link, '_blank');
+}
+
+
