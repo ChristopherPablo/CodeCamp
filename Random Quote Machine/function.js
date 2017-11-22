@@ -1,4 +1,4 @@
-// All quotes are saved in this array.*/
+/* All quotes are saved in this array.
 var data =[
   {
     "quote": "You can avoid reality, but you cannot avoid the consequences of avoiding reality.",
@@ -62,6 +62,42 @@ function socialTumblr(){
 	var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
 	var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
 	window.open(link, '_blank');
-}
+} */
 
 
+  var currentQuote = '', currentAuthor = '';
+
+  function getQuote(){
+    $.ajax({
+      headers: {
+        "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
+         Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=',
+      success: function(data){
+        if(typeof data === 'string'){
+          data = JSON.parse(data);
+        }
+        currentQuote = data.quote;
+        currentAuthor = data.author;
+
+        $('.box').animate({
+          opacity:0
+        },500, function(){
+          $(this).animate({
+            opacity:1
+          },500);
+          $("#content").text(data.quote);
+        });
+      },
+      error: function(){
+        alert("Error to get a quote");
+      }
+    })
+  }
+
+  $(document).ready(function(){
+    getQuote();
+    $('#quote').on('click', getQuote);
+  });
