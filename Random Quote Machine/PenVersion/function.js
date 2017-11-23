@@ -32,7 +32,10 @@
         typewriter(currentQuote,0,'#quote');
         //Changing the background color
         var color = colors[Math.floor(Math.random()*colors.length)];
-        $("body").css('background-color', color);
+        $("body").css({
+          'background-color' : color,
+          'color' : color
+        });
       },
       error: function(){
         alert('Error to get a quote');
