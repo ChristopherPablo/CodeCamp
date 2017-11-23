@@ -1,6 +1,6 @@
-// variable to store the random quote
-
+// variable to store the random quote and the colors too
  var currentQuote = '';
+ var colors = ["#c72923","#116063","#57aefc","#ed674d","#9c5b93", "#4dd3ed", "#000000", "#55515e"];
 
 // function to make the typeWriter animation
  function typewriter(text, n, def){
@@ -30,6 +30,9 @@
         }
         currentQuote = data.quote + '  - '+ data.author;
         typewriter(currentQuote,0,'#quote');
+        //Changing the background color
+        var color = colors[Math.floor(Math.random()*colors.length)];
+        $("body").css('background-color', color);
       },
       error: function(){
         alert('Error to get a quote');

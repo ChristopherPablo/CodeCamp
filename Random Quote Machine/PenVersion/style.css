@@ -1,7 +1,9 @@
 *{
 	box-sizing: border-box;
 }
-
+body{
+	background-color: green;
+}
 .container {
 	border: solid 1px red;
 	width: 500px;
@@ -12,4 +14,5 @@
 	left: 0;
 	bottom: 0;
 	margin: auto;
+	background-color: #fff;
 }
