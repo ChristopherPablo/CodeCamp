@@ -98,6 +98,6 @@ function socialTumblr(){
   }
 
   $(document).ready(function(){
-    getQuote();
+   //getQuote();
     $('#quote').on('click', getQuote);
   });

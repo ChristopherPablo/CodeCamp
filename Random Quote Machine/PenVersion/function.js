@@ -1,67 +1,51 @@
-// All quotes are saved in this array.*/
-var data =[
-  {
-    "quote": "You can avoid reality, but you cannot avoid the consequences of avoiding reality.",
-    "author": "Ayn Rand",
-  },
-  {
-    "quote": "I can write better than anybody who can write faster, and I can write faster than anybody who can write better.",
-    "author": "A. J. Liebling",
-  },
-  {
-    "quote": "This book fills a much-needed gap.",
-    "author": "Moses Hadas in a review",
-  },
-  {
-    "quote": "A mathematician is a device for turning coffee into theorems.",
-    "author": "Paul Erdos",
-  },
-  {
-    "quote": "The only difference between me and a madman is that I'm not mad.",
-    "author": "Salvador Dali",
-  },
-  {
-    "quote": "Never interrupt your enemy when he is making a mistake.",
-    "author": "Napoleon Bonaparte",
-  },
-  {
-    "quote": "If you are going through hell, keep going.",
-    "author": "Sir Winston Churchill ",
-  },
-  {
-    "quote": "He who has a 'why' to live, can bear with almost any 'how'.",
-    "author": "Friedrich Nietzsche",
-  },
-  {
-    "quote": "I'm all in favor of keeping dangerous weapons out of the hands of fools. Let's start with typewriters.",
-    "author": "Frank Lloyd Wright",
-  },
-  {
-    "quote": "I am ready to meet my Maker. Whether my Maker is prepared for the great ordeal of meeting me is another matter.",
-    "author": "Sir Winston Churchill",
+// variable to store the random quote
+
+ var currentQuote = '';
+
+// function to make the typeWriter animation
+ function typewriter(text, n, def){
+  if(n < (text.length)){
+    $(def).html(text.substring(0, n+1));
+    n++;
+    setTimeout(function(){
+      typewriter(text, n, def)
+    },50);
   }
-];
+ }
 
-var text;
+// Getting the random quote and displaying it
+  function getQuote(){
+    $.ajax({
+      headers: {
+        "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
+        Accept: "application/json",
+        'Content-Type' : "application/x-www-form-urlencoded"
+      },
 
-//function to tke the array length and using the random math property set an
-//random quote from the array to text.
-function randomQuote(){
-	text = data[Math.floor(Math.random()*(data.length))];
-	document.getElementById('content').innerHTML = text.quote;
-	document.getElementById('author').innerHTML ="- " + text.author;
+      url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=',
+
+      success: function(data){
+        if(typeof data === 'string'){
+          data = JSON.parse(data);
+        }
+        currentQuote = data.quote + '  - '+ data.author;
+        typewriter(currentQuote,0,'#quote');
+      },
+      error: function(){
+        alert('Error to get a quote');
+      }
+    })
+  }
+
+// Function to post the quote to a twitter page
+function posttwitter(){
+ var url = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote);
+ window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
 }
 
-function socialTwitter(){
-	var txt = document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
-	var link = "https://twitter.com/intent/tweet?text="+txt+"&hashtags=quote";
-	window.open(link, '_blank');
-}
-
-function socialTumblr(){
-	var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
-	var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
-	window.open(link, '_blank');
-}
-
-
+// calling all functions
+  $(document).ready(function(){
+    getQuote();
+    $('#bot').on('click', getQuote);
+    $('#tweet-quote').on('click',posttwitter)
+  });
