@@ -1,5 +1,7 @@
 // setting the variable to store the quote and author to post on twitter
+// plus a var to store the gifs that change.
   var currentQuote = '';
+  var pokemonGif = ['charmander.gif','Charmeleon.gif','flareon.gif','pikachu.gif','bulbasauro.gif','squartle.gif','magikarp.gif','grouwleaf.gif','meaw.gif','dratine.gif','odish.gif','snorlax.gif'];
 
    function typeWriter(quote, author, nQ, nA){
     if(nQ < quote.length){
@@ -38,6 +40,12 @@
         $('#content').empty();
         $('#author').empty();
         typeWriter(data.quote, '- '+ data.author, 0,0);
+
+        var image = 'images/'+ pokemonGif[Math.floor(Math.random()*pokemonGif.length)];
+        $('#pokemon').fadeOut(500, function(){
+          $('#pokemon').attr('src',image);
+          $('#pokemon').fadeIn(500);
+        });
       },
       error: function(){
         alert("Error to get a quote");
