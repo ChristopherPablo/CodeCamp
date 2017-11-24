@@ -1,72 +1,25 @@
-/* All quotes are saved in this array.
-var data =[
-  {
-    "quote": "You can avoid reality, but you cannot avoid the consequences of avoiding reality.",
-    "author": "Ayn Rand",
-  },
-  {
-    "quote": "I can write better than anybody who can write faster, and I can write faster than anybody who can write better.",
-    "author": "A. J. Liebling",
-  },
-  {
-    "quote": "This book fills a much-needed gap.",
-    "author": "Moses Hadas in a review",
-  },
-  {
-    "quote": "A mathematician is a device for turning coffee into theorems.",
-    "author": "Paul Erdos",
-  },
-  {
-    "quote": "The only difference between me and a madman is that I'm not mad.",
-    "author": "Salvador Dali",
-  },
-  {
-    "quote": "Never interrupt your enemy when he is making a mistake.",
-    "author": "Napoleon Bonaparte",
-  },
-  {
-    "quote": "If you are going through hell, keep going.",
-    "author": "Sir Winston Churchill ",
-  },
-  {
-    "quote": "He who has a 'why' to live, can bear with almost any 'how'.",
-    "author": "Friedrich Nietzsche",
-  },
-  {
-    "quote": "I'm all in favor of keeping dangerous weapons out of the hands of fools. Let's start with typewriters.",
-    "author": "Frank Lloyd Wright",
-  },
-  {
-    "quote": "I am ready to meet my Maker. Whether my Maker is prepared for the great ordeal of meeting me is another matter.",
-    "author": "Sir Winston Churchill",
+// setting the variable to store the quote and author to post on twitter
+  var currentQuote = '';
+
+   function typeWriter(quote, author, nQ, nA){
+    if(nQ < quote.length){
+      $('#content').html(quote.substring(0,nQ+1));
+      nQ++;
+      setTimeout(function(){
+        typeWriter(quote, author, nQ,nA);
+      }, 50);
+    }
+
+    else if(nA < author.length){
+      $('#author').html(author.substring(0,nA+1));
+      nA++;
+      setTimeout(function(){
+        typeWriter(quote, author, nQ,nA);
+      }, 50);
+    }
   }
-];
 
-var text;
-
-//function to tke the array length and using the random math property set an
-//random quote from the array to text.
-function randomQuote(){
-	text = data[Math.floor(Math.random()*(data.length))];
-	document.getElementById('content').innerHTML = text.quote;
-	document.getElementById('author').innerHTML ="- " + text.author;
-}
-
-function socialTwitter(){
-	var txt = document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
-	var link = "https://twitter.com/intent/tweet?text="+txt+"&hashtags=quote";
-	window.open(link, '_blank');
-}
-
-function socialTumblr(){
-	var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
-	var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
-	window.open(link, '_blank');
-} */
-
-
-  var currentQuote = '', currentAuthor = '';
-
+// Getting the random quote from external address
   function getQuote(){
     $.ajax({
       headers: {
@@ -79,17 +32,12 @@ function socialTumblr(){
         if(typeof data === 'string'){
           data = JSON.parse(data);
         }
-        currentQuote = data.quote;
-        currentAuthor = data.author;
 
-        $('.box').animate({
-          opacity:0
-        },500, function(){
-          $(this).animate({
-            opacity:1
-          },500);
-          $("#content").text(data.quote);
-        });
+        // Setting the quote to Twitter and sending it to the typeWrite function
+        currentQuote = data.quote + ' - '+ data.author;
+        $('#content').empty();
+        $('#author').empty();
+        typeWriter(data.quote, '- '+ data.author, 0,0);
       },
       error: function(){
         alert("Error to get a quote");
@@ -97,7 +45,23 @@ function socialTumblr(){
     })
   }
 
+// Function to post the quote to a tumblr page
+  function postTumblr(){
+  var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
+  var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
+  window.open(link, '_blank');
+}
+
+// Function to post the quote to a twitter page
+function postTwitter(){
+ var url = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(currentQuote);
+ window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
+}
+
+// calling all functions
   $(document).ready(function(){
-   //getQuote();
+    getQuote();
     $('#quote').on('click', getQuote);
+    $('#socialTwitter').on('click',postTwitter);
+    $('#socialTumblr').on('click',postTumblr);
   });

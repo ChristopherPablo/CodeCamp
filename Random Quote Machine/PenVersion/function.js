@@ -1,15 +1,15 @@
 // variable to store the random quote and the colors too
  var currentQuote = '';
- var colors = ["#c72923","#116063","#57aefc","#ed674d","#9c5b93", "#4dd3ed", "#000000", "#55515e"];
+ var colors = ["#b3c2bf","#a8b6bf","#9ad3de","#89bdd3","#9068be","#e62739","#173e43","#3fb0ac","#22264b","#b56969","#283018"];
 
 // function to make the typeWriter animation
 
- function typeText(quote, author, nQ, nA){
+ function typeWriter(quote, author, nQ, nA){
   if(nQ < quote.length){
     $('#quote').html(quote.substring(0,nQ+1));
     nQ++;
     setTimeout(function(){
-      typeText(quote, author, nQ,nA);
+      typeWriter(quote, author, nQ,nA);
     }, 50);
   }
 
@@ -17,12 +17,12 @@
     $('#author').html(author.substring(0,nA+1));
     nA++;
     setTimeout(function(){
-      typeText(quote, author, nQ,nA);
+      typeWriter(quote, author, nQ,nA);
     }, 50);
   }
  }
 
-// Getting the random quote and displaying it
+// Getting the random quote from external address
   function getQuote(){
     $.ajax({
       headers: {
@@ -37,15 +37,22 @@
         if(typeof data === 'string'){
           data = JSON.parse(data);
         }
+        // Setting the quote to Twitter and sending it to the typeWrite function
         currentQuote = data.quote +' - '+ data.author;
         $('#author').empty();
-        typeText(data.quote,('- '+data.author),0,0);
-        //Changing the background color
+        $('#quote').empty();
+        typeWriter(data.quote,('- '+data.author),0,0);
+
+        //Changing the background color and animating it
         var color = colors[Math.floor(Math.random()*colors.length)];
         $('body').animate({
           backgroundColor : color,
           color : color
         },1000);
+
+        $('.button').animate({
+          backgroundColor : color
+        }, 1000);
       },
       error: function(){
         alert('Error to get a quote');

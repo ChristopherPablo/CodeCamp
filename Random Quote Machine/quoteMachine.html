@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="text/javascript" rel="jQuery" href="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="function.js"></script>
 
 </head>
 <body>
@@ -20,17 +22,19 @@
 
 			<div class="container">
 				<div class="box">
-					<p id="content">Gotta catch 'em all!</p>
-					<div class="author">
-						 <span id="author">- Satoshi</span>
+					<div>
+						<span id="content"></span>
 					</div>
-					<script type="text/javascript" src="function.js"></script>
+					<div class="author">
+						<br><br>
+						 <span id="author"></span>
+					</div>
 				</div>
 				<div class="botton">
 					<ul>
 						<li><button class="btn" id="quote">Quotes</button></li>
-						<li><button class="btn" onclick="socialTwitter()">Twitter</button></li>
-						<li><button class="btn" onclick="socialTumblr()">Tumblr</button></li>
+						<li><button class="btn" id="socialTwitter">Twitter</button></li>
+						<li><button class="btn" id="socialTumblr">Tumblr</button></li>
 					</ul>
 				</div>
 			</div>
