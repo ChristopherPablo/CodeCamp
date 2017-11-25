@@ -57,7 +57,7 @@
   function postTumblr(){
   var txt =document.getElementById('content').innerHTML+' '+document.getElementById('author').innerHTML;
   var link = 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+'&content=' + txt+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button';
-  window.open(link, '_blank');
+  window.open(link, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
 }
 
 // Function to post the quote to a twitter page
