@@ -1,6 +1,6 @@
 // setting the variable to store the quote and author to post on twitter
 // plus a var to store the gifs that change.
-  var currentAuthor = '';
+  var currentAuthor = '', currentQuote ='';
   var pokemonGif = ['charmander.gif','Charmeleon.gif','flareon.gif','pikachu.gif','bulbasauro.gif','squartle.gif','magikarp.gif','grouwleaf.gif','meaw.gif','dratine.gif','odish.gif','snorlax.gif'];
 
    function typeWriter(quote, author, nQ, nA){
@@ -62,6 +62,7 @@
       GetQuote();
     } else{
         currentAuthor = json.quoteAuthor;
+        currentQuote = json.quoteText;
       if (json.quoteAuthor == "") {
         $("#author-text").text("-" + "Unknown");
         currentAuthor = "Unknown";
@@ -89,7 +90,7 @@
 
 // Function to post the quote to a twitter page
 function postTwitter(){
- var url = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(currentQuote);
+ var url = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(currentQuote+' -'+currentAuthor);
  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
 }
 
