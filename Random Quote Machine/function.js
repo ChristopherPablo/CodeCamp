@@ -1,6 +1,6 @@
 // setting the variable to store the quote and author to post on twitter
 // plus a var to store the gifs that change.
-  var currentQuote = '';
+  var currentAuthor = '';
   var pokemonGif = ['charmander.gif','Charmeleon.gif','flareon.gif','pikachu.gif','bulbasauro.gif','squartle.gif','magikarp.gif','grouwleaf.gif','meaw.gif','dratine.gif','odish.gif','snorlax.gif'];
 
    function typeWriter(quote, author, nQ, nA){
@@ -22,7 +22,8 @@
   }
 
 // Getting the random quote from external address
-  function getQuote(){
+// for some strnge reason the ajax stoped working so created another one to get the quote
+/*  function getQuote(){
     $.ajax({
       headers: {
         "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
@@ -51,7 +52,33 @@
         alert("Error to get a quote");
       }
     })
-  }
+  } */
+
+  var quoteUrl =
+  "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&jsonp=?&lang=en";
+  function GetQuote() {
+  $.getJSON(quoteUrl, function(json) {
+    if (json.quoteText.length + json.quoteAuthor.length > 240) {
+      GetQuote();
+    } else{
+        currentAuthor = json.quoteAuthor;
+      if (json.quoteAuthor == "") {
+        $("#author-text").text("-" + "Unknown");
+        currentAuthor = "Unknown";
+      }
+
+        $('#content').empty();
+        $('#author').empty();
+        typeWriter(json.quoteText, '- '+currentAuthor , 0,0);
+
+        var image = 'images/'+ pokemonGif[Math.floor(Math.random()*pokemonGif.length)];
+        $('#pokemon').fadeOut(500, function(){
+          $('#pokemon').attr('src',image);
+          $('#pokemon').fadeIn(500);
+        });
+    }
+  });
+}
 
 // Function to post the quote to a tumblr page
   function postTumblr(){
@@ -68,8 +95,9 @@ function postTwitter(){
 
 // calling all functions
   $(document).ready(function(){
-    getQuote();
-    $('#quote').on('click', getQuote);
+    //getQuote();
+    GetQuote();
+    $('#quote').on('click', GetQuote);
     $('#socialTwitter').on('click',postTwitter);
     $('#socialTumblr').on('click',postTumblr);
   });
