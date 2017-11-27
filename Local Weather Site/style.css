@@ -62,7 +62,8 @@ body{
 	height: 200px;
 	position: absolute;
 	display: inline-block;
-	float: right;
+	float: left;
+	padding: 0;
 }
 
 .bottomLeft{
@@ -70,4 +71,5 @@ body{
 	width: 45%;
 	height: 40%;
 	float: left;
+	margin: 0;
 }
