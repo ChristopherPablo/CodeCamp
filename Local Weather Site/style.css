@@ -1,0 +1,38 @@
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+}
+
+.wrapper{
+	border: solid 1px green;
+	
+}
+
+.container{
+	border: solid 1px red;
+	width: 630px;
+	height: 500px;
+	display: flex;
+	margin: auto;
+	border-radius: 15px;
+}
+
+.topRight{
+	border: solid 1px blue;
+	width: 50%;
+	height: 60%;
+}
+
+.topLeft{
+	border: solid 1px black;
+	width: 50%;
+	height: 60%;
+}
+
+.divHorizontal{
+	
+}
