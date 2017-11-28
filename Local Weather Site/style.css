@@ -5,6 +5,8 @@
 
 body{
 	margin: 0;
+	background-color: #263238;
+	font-family: 'Pacifico', cursive;
 }
 
 .wrapper{
@@ -14,8 +16,8 @@ body{
 
 .container{
 	border: solid 1px red;
-	width: 630px;
-	height: 500px;
+	width: 400px;
+	height: 600px;
 	display: block;
 	margin: auto;
 	border-radius: 15px;
@@ -24,52 +26,89 @@ body{
 	right: 0;
 	left: 0;
 	bottom: 0;
+	background-color: #313e45;
 }
 
-.topRight{
-	border: solid 1px blue;
-	width: 50%;
-	height: 60%;
-	float: right;
-	padding: 0;
+.header{
+	border: solid 1px green;
+	width: 100%;
+	height: 55px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
-.topLeft{
-	border: solid 1px black;
-	width: 50%;
-	height: 60%;
-	display: inline-block;
-	padding:  0;
-}
-
-.divHorizontal{
+.content{
 	border: solid 1px black;
 	width: 100%;
-	height: 3px;
-	margin-top: -5px;
+	height: 158px;
+	border-bottom: solid 2px white;
 }
 
-.bottomRight{
-	border: solid 1px brown;
-	width: 55%;
-	height: 40%;
+.temperature{
+	border: solid  1px red;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+}
+
+.animation{
+	border: solid  1px red;
+	width: 50%;
+	height: 100%;
 	float: right;
 }
 
-.verticalDiv{
-	border: solid 1px black;
-	width: 3px;
-	height: 200px;
-	position: absolute;
-	display: inline-block;
-	float: left;
-	padding: 0;
+.weekDays{
+	border: solid 1px pink;
+	width: 100%;
+	height: 55px;
+	display: flex;
+	background-color: green;
+	border-bottom: solid 2px white;
 }
 
-.bottomLeft{
+.data{
+	width: 30%;
+	height: 100%;
+	background-color: blue;
+	-webkit-clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
+
+}
+
+/*.temp{
+	height: 100%;
+	width: 70%;
+	display: inline-block;
+	background-color: green;
+	-webkit-clip-path: polygon(13% 0, 100% 1%, 100% 100%, 0 100%, 6% 54%);
+	clip-path: polygon(13% 0, 100% 1%, 100% 100%, 0 100%, 6% 54%);
+
+} */
+
+.weekDaysLast{
 	border: solid 1px pink;
-	width: 45%;
-	height: 40%;
-	float: left;
-	margin: 0;
+	width: 100%;
+	height: 55px;
+	display: flex;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	background-color: green;
+}
+
+.dataLast{
+	width: 30%;
+	height: 100%;
+	background-color: blue;
+	-webkit-clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
+	border-bottom-left-radius: 15px;
+}
+
+.center{
+	margin-left: 35px;
+}
+.data, .dataLast span{
+	font-size: 30px;
+	font-weight: bold;
 }
