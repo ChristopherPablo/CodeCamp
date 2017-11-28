@@ -9,15 +9,10 @@ body{
 	font-family: 'Pacifico', cursive;
 }
 
-.wrapper{
-	border: solid 1px green;
-
-}
-
 .container{
 	border: solid 1px red;
 	width: 400px;
-	height: 600px;
+	height: 400px;
 	display: block;
 	margin: auto;
 	border-radius: 15px;
@@ -29,14 +24,54 @@ body{
 	background-color: #313e45;
 }
 
+/*
+	header with the hour display and the city
+*/
 .header{
 	border: solid 1px green;
 	width: 100%;
 	height: 55px;
+	display: flex;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 }
 
+.hours, .city{
+	border: solid 1px green;
+	width: 50%;
+	height: 100%;
+	position: relative;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 25px;
+
+}
+.hours span{
+	position: absolute;
+	bottom: 0;
+}
+
+.city span{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+.animation{
+	text-align: center;
+	display: block;
+}
+
+.animation img{
+	width: 80px;
+}
+
+.weather{
+	padding: 10px;
+}
+/*
+	content display the weather prediction for today
+*/
 .content{
 	border: solid 1px black;
 	width: 100%;
@@ -50,6 +85,21 @@ body{
 	height: 100%;
 	display: inline-block;
 }
+.today, .displayTemp{
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	margin: auto;
+}
+
+.today{
+	height: 20%;
+}
+.displayTemp{
+	height: 70%;
+	font-size: 50px;
+}
 
 .animation{
 	border: solid  1px red;
@@ -58,6 +108,9 @@ body{
 	float: right;
 }
 
+/*
+	WeekDays display the weather prediction for the week
+*/
 .weekDays{
 	border: solid 1px pink;
 	width: 100%;
@@ -106,9 +159,27 @@ body{
 }
 
 .center{
+	margin-top: -4px;
 	margin-left: 35px;
 }
 .data, .dataLast span{
 	font-size: 30px;
 	font-weight: bold;
 }
+
+.temp{
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin-left: 100px;
+	margin-top: 12px;
+}
+
+.temp span{
+	margin-left: 15px;
+}
+
+/*
+	Animation
+*/
