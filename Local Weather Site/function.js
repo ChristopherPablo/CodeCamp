@@ -4,19 +4,26 @@
 $(document).ready(function(){
 
 	// getting the coordenates
+	var lon, lat;
+
 	$.ajax({
 		type: 'GET',
 		url: 'http://ip-api.com/json',
-		success: coordinates
+		success: function(data){
+			lon = data.lon;
+			lat = data.lat;
 
+			$('#location').animate({opacity: 0},100, function(){
+				$('#location').animate({opacity: 1},100);
+				$('#location').html(data.city +','+ data.countryCode);
+			});
+		},
+		error: function(){
+			alert("Error: Not able to get your location");
+		}
 	});
 
-	function coordinates(data){
-		var lon = data.lon;
-		var lat = data.lat;
-		var city = data.city;
-		var country = data.countryCode;
-	}
+
 
 	function dataHour(){
 		var currentdate = new Date();
