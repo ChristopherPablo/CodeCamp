@@ -3,29 +3,48 @@
 
 $(document).ready(function(){
 
-	// getting the coordenates
-	var urlString;
-
-	$.ajax({
-		type: 'GET',
-		url: 'http://ip-api.com/json',
-		success: function(data){
-			urlString = 'https://fcc-weather-api.glitch.me/api/current?'+ 'lon=:'+ data.lon + '&lat=:' + data.lat;
-			lon = data.lon;
-			lat = data.lat;
-
-			//displaying the location on the app
-			$('#location').animate({opacity: 0},50, function(){
-				$('#location').animate({opacity: 1},50);
-				$('#location').html(data.city +','+ data.countryCode);
-			});
-
-			dataHour();
-		},
-		error: function(){
-			alert("Error: Not able to get your location");
+	// getting the coordenates with HTML API Geolocation
+	function getLocation(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(savePosition);
 		}
-	});
+		else{
+			alert("Geolocation is not supported by this browser.")
+		}
+	}
+	// variables to store the url with the location included for the weather API
+
+
+	function savePosition(position){
+		var urlString = 'https://fcc-weather-api.glitch.me/api/current?'+ '&lat=' + position.coords.latitude  + '&lon='+ position.coords.longitude;
+		getWeather(urlString);
+	}
+
+	//getting the weather forecast for the day
+	function getWeather(urlString){
+		$.ajax({
+			type: 'GET',
+			url: urlString,
+			success: function(result){
+				console.log(result);
+				var celsiusTemp = Math.round((result.main.temp*10)/10);
+				var fireTemp = Math.round(celsiusTemp * 9 / 5 + 32);
+				$('#temp').html(fireTemp + "°");
+				$('#location').html(result.name + ',' + result.sys.country);
+				$('#weather').html(result.weather[0].main);
+				$('#wind').html('Wind '+result.wind.speed);
+				$('#humidity').html('humidity' + result.main.humidity);
+				$('#temp_min').html('Temp min' + result.main.temp_min);
+				$('#temp_max').html('Temp Max' + result.main.temp_max);
+				dataHour();
+
+			},
+			error: function(){
+				alert("not able the get the weather");
+			}
+		});
+	}
+
 
 
 // getting the data of the day
@@ -66,22 +85,8 @@ $(document).ready(function(){
 
 		$('#hours').html(hour+ ':' + minuts + ':' + seconds + meridium);
 	};
-	//setInterval(clock, 1000); // updating the clock every second
+	setInterval(clock, 1000); // updating the clock every second
+	getLocation();
 
-	//getting the weather forecast for the day
-	function getWeather(){
-		$.ajax({
-			type: 'GET',
-			url: urlString,
-			success: function(result){
-				var celsiusTemp = Math.round(result.main.temp*10)/10;
-				$('#temp').html(celsiusTemp);
-				console.log(celsiusTemp);
-			},
-			error: function(){
-				alert("not able the get the weather");
-			}
-		});
-	}
-	getWeather();
+
 });
