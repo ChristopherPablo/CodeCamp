@@ -62,10 +62,6 @@ body{
 	display: block;
 }
 
-.animation img{
-	width: 80px;
-}
-
 .weather{
 	padding: 10px;
 }
@@ -111,80 +107,24 @@ body{
 /*
 	WeekDays display the weather prediction for the week
 */
-.weekDays{
-	border: solid 1px pink;
-	width: 100%;
-	height: 55px;
-	display: flex;
-	background-color: green;
-	border-bottom: solid 2px white;
-}
-
-.data{
-	width: 30%;
-	height: 100%;
-	background-color: blue;
-	-webkit-clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
-	clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
-
-}
-
-/*.temp{
-	height: 100%;
-	width: 70%;
-	display: inline-block;
-	background-color: green;
-	-webkit-clip-path: polygon(13% 0, 100% 1%, 100% 100%, 0 100%, 6% 54%);
-	clip-path: polygon(13% 0, 100% 1%, 100% 100%, 0 100%, 6% 54%);
-
-} */
-
-.weekDaysLast{
-	border: solid 1px pink;
-	width: 100%;
-	height: 55px;
-	display: flex;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	background-color: green;
-}
-
-.dataLast{
-	width: 30%;
-	height: 100%;
-	background-color: blue;
-	-webkit-clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
-	clip-path: polygon(0% 0%, 100% 0, 84% 54%, 69% 100%, 0% 100%);
-	border-bottom-left-radius: 15px;
-}
-
-.center{
-	margin-top: -4px;
-	margin-left: 35px;
-}
-.data, .dataLast span{
-	font-size: 30px;
-	font-weight: bold;
-}
-
-.temp{
-	width: 50px;
-	height: 30px;
-	background-color: #fff;
-	border-radius: 50%;
-	margin-left: 100px;
-	margin-top: 12px;
-}
-
-.temp span{
-	margin-left: 15px;
-}
 
 /*
 	Animation
 */
 
+.icon {
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 11rem;
+  height: 9rem;
+}
+.hide{
+	display: none;
+}
+
 .cloud {
+	color: #fff;
   position: absolute;
   z-index: 1;
   top: 50%;
