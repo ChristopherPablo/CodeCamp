@@ -2,6 +2,9 @@
 // getting the location from Json api
 
 $(document).ready(function(){
+	var celsiusTemp;
+	var minTemp;
+	var maxTemp;
 
 	// getting the coordenates with HTML API Geolocation
 	function getLocation(){
@@ -26,16 +29,20 @@ $(document).ready(function(){
 			type: 'GET',
 			url: urlString,
 			success: function(result){
-				console.log(result);
-				var celsiusTemp = Math.round((result.main.temp*10)/10);
-				var fireTemp = Math.round(celsiusTemp * 9 / 5 + 32);
-				$('#temp').html(fireTemp + "°");
+
+				celsiusTemp = Math.round((result.main.temp * 10)/10);
+				minTemp =  Math.round((result.main.temp_min * 10)/10);
+				maxTemp = Math.round((result.main.temp_max * 10)/10);
+
 				$('#location').html(result.name + ',' + result.sys.country);
-				$('#weather').html(result.weather[0].main);
+				$('#weather').text(result.weather[0].main);
+				animationTemp(result.weather[0].main);
+				$('#temp').html(celsiusTemp + "°");
+				$('#unit').text('C');
 				$('#wind').html('Wind '+result.wind.speed);
 				$('#humidity').html('humidity' + result.main.humidity);
-				$('#temp_min').html('Temp min' + result.main.temp_min);
-				$('#temp_max').html('Temp Max' + result.main.temp_max);
+				$('#temp_min').html('Temp min' + minTemp + '°');
+				$('#temp_max').html('Temp Max' + maxTemp + '°');
 				dataHour();
 
 			},
@@ -45,7 +52,51 @@ $(document).ready(function(){
 		});
 	}
 
+//Changing and choosing the animation
+	function animationTemp(weather){
+		var weather = weather.toLowerCase();
+		switch(weather){
+			case 'cloud':
+				showTemp('.cloudy')
+				break;
+			case 'rain':
+				showTemp('.rainy')
+				break;
+			case 'snow':
+				showTemp('.flurries')
+				break;
+			case 'clear':
+				showTemp('.sunny')
+				break;
+			case 'thumderstorm':
+				showTemp('.thunder-storm')
+				break;
+			default:
+				$('.cloudy').removeClass('hide');
+		}
+	}
 
+	function showTemp(weather){
+		$(weather).removeClass('hide');
+	}
+
+//Changing the temperature unit
+	$('#unit').click(function(){
+		var currentUnit = $('#unit').text();
+
+		if (currentUnit == 'C') {
+			$('#temp').text((Math.round(celsiusTemp * 9 / 5 + 32)) + '°');
+			$('#temp_min').text('Temp min' + (Math.round(minTemp * 9 / 5 + 32)) + '°');
+			$('#temp_max').text('Temp max' + (Math.round(maxTemp * 9 / 5 + 32)) + '°');
+			$('#unit').text('F');
+		}
+		else{
+			$('#temp').text(celsiusTemp + '°');
+			$('#temp_min').text('Temp min' + minTemp + '°');
+			$('#temp_max').text('Temp max' + maxTemp + '°');
+			$('#unit').text('C');
+		}
+	});
 
 // getting the data of the day
 	function dataHour(){
