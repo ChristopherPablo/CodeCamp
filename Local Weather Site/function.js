@@ -38,15 +38,14 @@ $(document).ready(function(){
 				$('#location').html(result.name + ',' + result.sys.country);
 				$('#weather').text(result.weather[0].main);
 				$('#temp').html(celsiusTemp + "°");
-				$('#unit').text('C');
-				$('#wind').html('Wind '+result.wind.speed);
-				$('#humidity').html('humidity' + result.main.humidity);
-				$('#temp_min').html('Temp min' + minTemp + '°');
-				$('#temp_max').html('Temp Max' + maxTemp + '°');
+				$('.unit').text('C');
+				$('#wind').html('Wind: '+result.wind.speed);
+				$('#humidity').html('Humidity: ' + result.main.humidity);
+				$('#temp_min').html('Temp min: ' + minTemp + '°');
+				$('#temp_max').html('Temp max: ' + maxTemp + '°');
 				dataHour();
-
 				animationTemp(result.weather[0].main);
-				$('.preLoading').toggle('slow');// Transition to make the loading page hide
+				//$('.preLoading').toggle('slow');// Transition to make the loading page hide
 
 			},
 			error: function(){
@@ -89,15 +88,15 @@ $(document).ready(function(){
 
 		if (currentUnit == 'C') {
 			$('#temp').text((Math.round(celsiusTemp * 9 / 5 + 32)) + '°');
-			$('#temp_min').text('Temp min' + (Math.round(minTemp * 9 / 5 + 32)) + '°');
-			$('#temp_max').text('Temp max' + (Math.round(maxTemp * 9 / 5 + 32)) + '°');
-			$('#unit').text('F');
+			$('#temp_min').text('Temp min: ' + (Math.round(minTemp * 9 / 5 + 32)) + '°');
+			$('#temp_max').text('Temp max: ' + (Math.round(maxTemp * 9 / 5 + 32)) + '°');
+			$('.unit').text('F');
 		}
 		else{
 			$('#temp').text(celsiusTemp + '°');
-			$('#temp_min').text('Temp min' + minTemp + '°');
-			$('#temp_max').text('Temp max' + maxTemp + '°');
-			$('#unit').text('C');
+			$('#temp_min').html('Temp min: ' + minTemp + '°' );
+			$('#temp_max').html('Temp max: ' + maxTemp + '°' );
+			$('.unit').text('C');
 		}
 	});
 
@@ -139,6 +138,7 @@ $(document).ready(function(){
 
 		$('#hours').html(hour+ ':' + minuts + ':' + seconds + ' '+ meridium);
 	};
+
 setInterval(clock, 1000); // updating the clock every second
 getLocation();
 

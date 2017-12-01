@@ -67,7 +67,7 @@ body{
 	padding: 10px;
 }
 /*
-	content display the weather prediction for today
+	Upper content display the weather prediction for today
 */
 .content{
 	border: solid 1px black;
@@ -104,7 +104,108 @@ body{
 	height: 100%;
 	float: right;
 }
+/*
+	Lower content to display adictional information
+*/
 
+.lowerContent{
+	border: solid 1px white;
+	width: 100%;
+	height: 186px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.windInform{
+	border: solid 1px yellow;
+	width: 50%;
+	height: 100%;
+	padding: 10px;
+	padding-top: 30px;
+	display: inline-block;
+}
+
+.lowerImage{
+	border: solid 1px yellow;
+	width: 50%;
+	height: 100%;
+	float: right;
+}
+
+/*
+	Kawaii class with all the gifs from weither
+*/
+
+.kawaiiCloud{
+	width: 150px;
+	height: 150px;
+	background-image: url('https://i.pinimg.com/originals/0f/de/6a/0fde6acd820f480aaa54e11f1e6ae591.gif');
+	background-size: 120px 120px;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	margin-left:  30px;
+}
+
+
+
+/* Preloading animation and class */
+
+.preLoading{
+	border: solid 1px red;
+	background-color: #263238;
+	width: 400px;
+	height: 400px;
+	display: block;
+	margin: auto;
+	border-radius: 15px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	align-content: center;
+}
+
+.spinner {
+  width: 30%;
+  height: 30%;
+  position: relative;
+  margin:130px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
 
 /*
 	Animation weather
@@ -117,6 +218,7 @@ body{
   width: 10rem;
   height: 8rem;
 }
+
 .hide{
 	display: none;
 }
@@ -359,6 +461,7 @@ body{
   -webkit-animation: spin 16s linear infinite reverse;
   animation: spin 16s linear infinite reverse;
 }
+
 /* Animations */
 
 @-webkit-keyframes spin {
@@ -470,64 +573,5 @@ body{
     color: #fff;
     background: #fff;
     opacity: 0.2;
-  }
-}
-
-/* Preloading animation and class */
-
-.preLoading{
-	border: solid 1px red;
-	background-color: #263238;
-	width: 400px;
-	height: 400px;
-	display: block;
-	margin: auto;
-	border-radius: 15px;
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	align-content: center;
-}
-
-.spinner {
-  width: 30%;
-  height: 30%;
-  position: relative;
-  margin:130px auto;
-}
-
-.double-bounce1, .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
   }
 }

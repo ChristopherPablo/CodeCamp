@@ -35,7 +35,7 @@
 
 					<div class="displayTemp">
 						<span id="temp"></span>
-						<span id="unit"></span>
+						<span class="unit" id="unit" style="font-size: 20px;"></span>
 					</div>
 
 				</div>
@@ -86,19 +86,39 @@
 				</div>
 			</div>
 
-			<div class=''>
-				<span id="wind"></span>
-				<br>
-				<span id="humidity"></span>
-				<br>
-				<span id='temp_min'></span>
-				<br>
-				<span id='temp_max'></span>
+			<div class='lowerContent'>
+				<div class="windInform">
+					<div>
+						<span id="wind"></span>
+						<span style="font-size: 10px;">Kh</span>
+					</div>
+
+					<div>
+						<span id='temp_min'></span>
+						<span class="unit" style="font-size: 10px;"></span>
+					</div>
+
+					<div>
+						<span id='temp_max'></span>
+						<span class="unit" style="font-size: 10px;"></span>
+					</div>
+
+					<div>
+						<span id="humidity"></span>
+						<span style="font-size: 10px;">%</span>
+					</div>
+				</div>
+
+				<div class="lowerImage">
+					<div id="kawaii" class="">
+					</div>
+				</div>
 			</div>
 
 		</div>
 	</div>
-	<div class="preLoading">
+
+	<div class="preLoading hide">
 		<div class="spinner">
 		  <div class="double-bounce1"></div>
 		  <div class="double-bounce2"></div>
