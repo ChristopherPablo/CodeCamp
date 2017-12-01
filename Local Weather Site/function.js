@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var minTemp;
 	var maxTemp;
 
-	// getting the coordenates with HTML API Geolocation
+// getting the coordenates with HTML API Geolocation
 	function getLocation(){
 		if(navigator.geolocation){
 			navigator.geolocation.getCurrentPosition(savePosition);
@@ -15,7 +15,8 @@ $(document).ready(function(){
 			alert("Geolocation is not supported by this browser.")
 		}
 	}
-	// variables to store the url with the location included for the weather API
+
+// variables to store the url with the location included for the weather API
 
 
 	function savePosition(position){
@@ -23,7 +24,7 @@ $(document).ready(function(){
 		getWeather(urlString);
 	}
 
-	//getting the weather forecast for the day
+//getting the weather forecast for the day
 	function getWeather(urlString){
 		$.ajax({
 			type: 'GET',
@@ -36,7 +37,6 @@ $(document).ready(function(){
 
 				$('#location').html(result.name + ',' + result.sys.country);
 				$('#weather').text(result.weather[0].main);
-				animationTemp(result.weather[0].main);
 				$('#temp').html(celsiusTemp + "°");
 				$('#unit').text('C');
 				$('#wind').html('Wind '+result.wind.speed);
@@ -44,6 +44,9 @@ $(document).ready(function(){
 				$('#temp_min').html('Temp min' + minTemp + '°');
 				$('#temp_max').html('Temp Max' + maxTemp + '°');
 				dataHour();
+
+				animationTemp(result.weather[0].main);
+				$('.preLoading').toggle('slow');// Transition to make the loading page hide
 
 			},
 			error: function(){
@@ -134,10 +137,9 @@ $(document).ready(function(){
 			seconds = "0"+ seconds;
 		}
 
-		$('#hours').html(hour+ ':' + minuts + ':' + seconds + meridium);
+		$('#hours').html(hour+ ':' + minuts + ':' + seconds + ' '+ meridium);
 	};
-	setInterval(clock, 1000); // updating the clock every second
-	getLocation();
-
+setInterval(clock, 1000); // updating the clock every second
+getLocation();
 
 });
