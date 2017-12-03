@@ -146,6 +146,35 @@ body{
 	margin-left:  30px;
 }
 
+.kawaiiRain{
+	width: 150px;
+	height: 150px;
+	background-image: url('https://i.pinimg.com/originals/0f/de/6a/0fde6acd820f480aaa54e11f1e6ae591.gif');
+	background-size: 120px 120px;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	margin-left:  30px;
+}
+
+.kawaiiSun{
+	width: 150px;
+	height: 150px;
+	background-image: url('https://i.pinimg.com/originals/0f/de/6a/0fde6acd820f480aaa54e11f1e6ae591.gif');
+	background-size: 120px 120px;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	margin-left:  30px;
+}
+
+.kawaiiStorm{
+	width: 150px;
+	height: 150px;
+	background-image: url('https://i.pinimg.com/originals/0f/de/6a/0fde6acd820f480aaa54e11f1e6ae591.gif');
+	background-size: 120px 120px;
+	background-repeat: no-repeat;
+	margin-top: 30px;
+	margin-left:  30px;
+}
 
 
 /* Preloading animation and class */
