@@ -56,14 +56,14 @@ $(document).ready(function(){
 
 //Changing and choosing the animation
 	function animationTemp(weather){
+		console.log(weather);
 		var weather = weather.toLowerCase();
 		switch(weather){
-			case 'cloud':
+			case 'clouds':
 				showTemp('.cloudy')
 				break;
 			case 'rain':
-				showTemp('.sunny', '#fff', 'kawaiiSun')
-				//showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
+				showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
 				break;
 			case 'snow':
 				showTemp('.flurries', '#EBEBEB', 'kawaiiSnow')
@@ -72,10 +72,11 @@ $(document).ready(function(){
 				showTemp('.sunny', '#fff', 'kawaiiSun')
 				break;
 			case 'thumderstorm':
-				showTemp('.thunder-storm')
+				showTemp('.thunder-storm', '#000', 'kawaii.Storm')
+				$('body').css('color', '#fff')
 				break;
 			default:
-				$('.cloudy').removeClass('hide');
+				showTemp('.cloudy');
 		}
 	}
 
