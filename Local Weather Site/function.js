@@ -45,7 +45,7 @@ $(document).ready(function(){
 				$('#temp_max').html('Temp max: ' + maxTemp + '°');
 				dataHour();
 				animationTemp(result.weather[0].main);
-				//$('.preLoading').toggle('slow');// Transition to make the loading page hide
+				$('.preLoading').toggle('slow');// Transition to make the loading page hide
 
 			},
 			error: function(){
@@ -60,7 +60,7 @@ $(document).ready(function(){
 		var weather = weather.toLowerCase();
 		switch(weather){
 			case 'clouds':
-				showTemp('.cloudy')
+				showTemp('.cloudy', '#646D63', 'kawaiiCloud')
 				break;
 			case 'rain':
 				showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
@@ -76,7 +76,7 @@ $(document).ready(function(){
 				$('body').css('color', '#fff')
 				break;
 			default:
-				showTemp('.cloudy');
+				showTemp('.cloudy', '#646D63', 'kawaiiCloud');
 		}
 	}
 
