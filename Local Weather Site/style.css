@@ -139,7 +139,7 @@ body{
 .kawaiiCloud{
 	width: 150px;
 	height: 150px;
-	background-image: url('https://i.pinimg.com/originals/0f/de/6a/0fde6acd820f480aaa54e11f1e6ae591.gif');
+	background-image: url('');
 	background-size: 120px 120px;
 	background-repeat: no-repeat;
 	margin-top: 30px;
@@ -147,13 +147,13 @@ body{
 }
 
 .kawaiiRain{
-	width: 150px;
-	height: 150px;
-	background-image: url();
-	background-size: 120px 120px;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://i.pinimg.com/originals/93/96/21/9396216ffaa53e3f425dbaca150d6bb6.jpg');
+	background-size: 200px 200px;
 	background-repeat: no-repeat;
-	margin-top: 30px;
-	margin-left:  30px;
+	border-bottom-right-radius: 15px;
+	opacity: 0.8;
 }
 
 .kawaiiSun{

@@ -62,7 +62,7 @@ $(document).ready(function(){
 				showTemp('.cloudy')
 				break;
 			case 'rain':
-				showTemp('.rainy')
+				showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
 				break;
 			case 'snow':
 				showTemp('.flurries')
@@ -78,8 +78,10 @@ $(document).ready(function(){
 		}
 	}
 
-	function showTemp(weather){
+	function showTemp(weather, background , classKawaii){
 		$(weather).removeClass('hide');
+		$('#kawaii').addClass(classKawaii);
+		$('.container').css('background-color', background);
 	}
 
 //Changing the temperature unit
