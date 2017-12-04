@@ -62,14 +62,14 @@ $(document).ready(function(){
 				showTemp('.cloudy')
 				break;
 			case 'rain':
-				showTemp('.flurries', '#EBEBEB', 'kawaiiSnow')
+				showTemp('.sunny', '#fff', 'kawaiiSun')
 				//showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
 				break;
 			case 'snow':
 				showTemp('.flurries', '#EBEBEB', 'kawaiiSnow')
 				break;
 			case 'clear':
-				showTemp('.sunny')
+				showTemp('.sunny', '#fff', 'kawaiiSun')
 				break;
 			case 'thumderstorm':
 				showTemp('.thunder-storm')
