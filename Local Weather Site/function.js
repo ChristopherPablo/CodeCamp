@@ -59,8 +59,8 @@ $(document).ready(function(){
 		console.log(weather);
 		var weather = weather.toLowerCase();
 		switch(weather){
-			case 'clouds':
-				showTemp('.cloudy', '#646D63', 'kawaiiCloud')
+			case 'clouds':							
+				showTemp('.cloudy', '#7A8076', 'kawaiiCloud')
 				break;
 			case 'rain':
 				showTemp('.rainy', '#E6E6E6' , 'kawaiiRain')
@@ -76,7 +76,7 @@ $(document).ready(function(){
 				$('body').css('color', '#fff')
 				break;
 			default:
-				showTemp('.cloudy', '#646D63', 'kawaiiCloud');
+				showTemp('.cloudy', '#7A8076', 'kawaiiCloud');
 		}
 	}
 
