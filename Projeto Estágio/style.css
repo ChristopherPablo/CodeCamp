@@ -3,3 +3,34 @@
 *{
 	box-sizing: border-box;
 }
+
+.wrapper{
+	border: 1px solid red;
+
+	margin: auto;
+	max-width: 300px;
+	min-width: 300px;
+	max-height: 500px;
+	min-height: 500px;
+	border-radius: 20px;
+	background-color: #D3D3D3;
+
+}
+
+#center{
+	margin: auto;
+	margin-top: 60px;
+}
+
+
+.container{
+	
+	border: 1px solid green;
+
+	max-width: 270px;
+	min-width: 270px;
+	max-height: 400px;
+	min-height: 400px;
+	margin-top: 60px;
+	
+}
